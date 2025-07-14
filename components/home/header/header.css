@@ -1,0 +1,17 @@
+.splide__slide {
+  width: 700px !important;
+  height: 400px !important;
+  transition-duration: 0.3s;
+  &:hover {
+    width: 800px !important;
+  }
+}
+.splide__arrow {
+  background: none;
+  font-size: 2rem;
+}
+.splide__arrow svg {
+  width: 100px;
+  height: 100px;
+  fill: var(--secondary);
+}
