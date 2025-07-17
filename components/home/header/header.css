@@ -1,9 +1,9 @@
 .splide__slide {
-  width: 700px !important;
-  height: 400px !important;
+  max-width: 700px !important;
+  max-height: 400px !important;
   transition-duration: 0.3s;
   &:hover {
-    width: 800px !important;
+    width: 2 !important;
   }
 }
 .splide__arrow {

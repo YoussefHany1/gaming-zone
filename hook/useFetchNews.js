@@ -1,14 +1,49 @@
+// Custom React hook to fetch and process news from RSS feeds
 'use client'
 import { decode } from 'html-entities';
 import { useState, useEffect } from 'react';
+
+function processNewsItems(items) {
+  return items.map((item) => {
+    const description2 = decode(item.description);
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(description2, 'text/html');
+    const imgEl = doc.querySelector('img');
+    const image = imgEl
+      ? {
+          src: imgEl.getAttribute('src') || '/image-not-found.png',
+          alt: imgEl.getAttribute('alt') || 'No Alt available',
+        }
+      : {
+          src: '/image-not-found.png',
+          alt: 'No Alt available',
+        };
+    doc.querySelectorAll('img').forEach((img) => img.remove());
+    const paragraphs = Array.from(doc.querySelectorAll('p')).map((p) =>
+      p.textContent.trim()
+    );
+    const description = paragraphs.join('\n\n');
+    const hostname = new URL(item.link).hostname;
+    const parts = hostname.split('.');
+    return {
+      ...item,
+      processedDescription: description,
+      image,
+      hostname,
+      websiteName: parts.length >= 2 ? parts[parts.length - 2] : hostname,
+    };
+  });
+}
 
 /**
  * useFetchNews
  * @param {string|string[]} rssUrls عنوان أو مجموعة عناوين RSS
  * @param {number} [intervalMs] فترة التحديث بالألف ميللي ثانية (اختياري)
+ * @returns {object} { items, error, loading } - Processed news items, error state, and loading state
  */
 export function useFetchNews(rssUrls, intervalMs) {
   const [items, setItems] = useState([]);
+  const [processedItems, setProcessedItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -22,6 +57,7 @@ export function useFetchNews(rssUrls, intervalMs) {
       return;
     }
     let mounted = true;
+    setError(null); // Reset error before fetch
 
     const fetchAll = () => {
       if (!mounted) return;
@@ -39,7 +75,6 @@ export function useFetchNews(rssUrls, intervalMs) {
         .then((results) => {
           if (!mounted) return;
           setItems(results.flat());
-          setError(null);
         })
         .catch((err) => {
           if (mounted) setError(err.message);
@@ -53,53 +88,15 @@ export function useFetchNews(rssUrls, intervalMs) {
     let timer;
     if (interval > 0) timer = setInterval(fetchAll, interval);
 
-
     return () => {
       mounted = false;
       if (timer) clearInterval(timer);
     };
   }, [JSON.stringify(urls), interval]);
-  
-  useEffect(() => {
-    const processedItems = items.map((item, index) => {
-      const description2 = decode(item.description);
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(description2, 'text/html');
-      const imgEl = doc.querySelector('img');
-      const image = imgEl 
-        ? { 
-            src: imgEl.getAttribute('src') || '/image-not-found.png', 
-            alt: imgEl.getAttribute('alt') || 'No Alt available' 
-          } 
-        : { 
-            src: '/image-not-found.png', 
-            alt: 'No Alt available' 
-          };
-      // console.log(image.src);
-      doc.querySelectorAll('img').forEach(img => img.remove());
-      const paragraphs = Array.from(doc.querySelectorAll('p'))
-        .map(p => p.textContent.trim())
-      // .filter(text => text.length > 0);
-      const description = paragraphs.join('\n\n');
-            
-      // console.log(description);
-      // get the website name from the link
-      const hostname = new URL(item.link).hostname;
-      const parts = hostname.split('.');
-      // console.log(parts);
-      
-      return {
-        ...item,
-        processedDescription: description,
-        image: image,
-        hostname: hostname,
-        websiteName: parts.length >= 2 ? parts[parts.length - 2] : hostname
-      };
-    });
-    
-    setItems(processedItems);
-  }, [items.length > 0 ? items[0]?.link : null]); // Only run when items change, not on every render
-  // console.log(items);
 
-  return { items, error, loading };
+  useEffect(() => {
+    setProcessedItems(processNewsItems(items));
+  }, [items]);
+
+  return { items: processedItems, error, loading };
 }

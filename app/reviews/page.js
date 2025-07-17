@@ -7,17 +7,17 @@ import clsx from 'clsx'
 import { useFetchNews } from "@/hook/useFetchNews";
 
 const websites = [
-  { id: 1, name: 'Game Informer', url: 'https://www.gameinformer.com/rss.xml', image: 'https://pbs.twimg.com/profile_images/1904604082377023488/AKr_ZNdi_400x400.jpg' },
-  { id: 2, name: 'Destructoid', url: 'https://www.destructoid.com/feed/', image: 'https://yt3.googleusercontent.com/ytc/AIdro_kUVzsRJ8L0VYXFXS-d1XMbHc25NLfF-YTWGkQGEW4sG4bB=s900-c-k-c0x00ffffff-no-rj' },
-  { id: 3, name: 'VG247', url: 'https://www.vg247.com/feed/news', image: 'https://pbs.twimg.com/profile_images/1428030281081135108/lzZ5QRai_400x400.jpg' },
-  { id: 4, name: 'IGN', url: 'https://feeds.feedburner.com/ign/news', image: 'https://pbs.twimg.com/profile_images/1942272360851333120/5odpCMrs_400x400.jpg' },
-  { id: 5, name: 'GameSpot', url: 'https://www.gamespot.com/feeds/game-news', image: 'https://pbs.twimg.com/profile_images/1828825064914997248/2rurCf2y_400x400.jpg' },
-  { id: 6, name: 'Eurogamer', url: 'https://www.eurogamer.net/feed/news', image: 'https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png' },
+  { id: 1, name: 'Game Informer', url: 'https://www.gameinformer.com/reviews.xml', image: 'https://pbs.twimg.com/profile_images/1904604082377023488/AKr_ZNdi_400x400.jpg' },
+//   { id: 2, name: 'Destructoid', url: 'https://www.destructoid.com/feed/', image: 'https://yt3.googleusercontent.com/ytc/AIdro_kUVzsRJ8L0VYXFXS-d1XMbHc25NLfF-YTWGkQGEW4sG4bB=s900-c-k-c0x00ffffff-no-rj' },
+  { id: 3, name: 'VG247', url: 'https://www.vg247.com/feed/reviews', image: 'https://pbs.twimg.com/profile_images/1428030281081135108/lzZ5QRai_400x400.jpg' },
+//   { id: 4, name: 'IGN', url: 'https://feeds.feedburner.com/ign/news', image: 'https://pbs.twimg.com/profile_images/1942272360851333120/5odpCMrs_400x400.jpg' },
+  { id: 5, name: 'GameSpot', url: 'https://www.gamespot.com/feeds/reviews', image: 'https://pbs.twimg.com/profile_images/1828825064914997248/2rurCf2y_400x400.jpg' },
+  { id: 6, name: 'Eurogamer', url: 'https://www.eurogamer.net/feed/reviews', image: 'https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png' },
   { id: 7, name: 'Game Rant', url: 'https://gamerant.com/feed/gaming/', image: 'https://pbs.twimg.com/profile_images/1288445622542929923/05FNH9O5_400x400.png' },
-  { id: 8, name: 'Saudi Gamer', url: 'https://www.saudigamer.com/feed/', image: 'https://pbs.twimg.com/profile_images/459163761220149249/wGTgLbCY_400x400.jpeg' },
+//   { id: 8, name: 'Saudi Gamer', url: 'https://www.saudigamer.com/feed/', image: 'https://pbs.twimg.com/profile_images/459163761220149249/wGTgLbCY_400x400.jpeg' },
 ]
 
-export default function LatestNews() {
+export default function Reviews() {
   const [visibleCount, setVisibleCount] = useState(10);
   
   const handleLoadMore = () => {
@@ -32,7 +32,7 @@ export default function LatestNews() {
   return (
     <>
       <section className="flex flex-col justify-center items-center mt-20"> 
-        <h2 className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest News</h2>
+        <h2 className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest Reviews</h2>
 
 <div className="mx-auto w-52 pt-10 pb-20">
       <Listbox value={selected} onChange={setSelected}>
@@ -74,14 +74,14 @@ export default function LatestNews() {
           {items.slice(0, visibleCount).map((item, index) => {
             const image = item.image?.src || '/image-not-found.png'
             return (
-              <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5`} key={index}>
-                <a href={item.link} target="_blank" className="news-link flex items-center justify-between">
-                  <div className="text mt-5 sm:mt-0">
-                    <h3 className="news-title text-lg sm:text-2xl font-semibold mr-0 sm:mr-20">{item.title}</h3>
-                    <p className="news-description text-gray-400 sm:text-md text-sm mr-0 sm:mt-3 sm:mr-20 mt-1">{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
+              <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5 mx30`} key={index}>
+                <a href={item.link} target="_blank" className="news-link flex items-center justify-between sm:flex-row flex-col-reverse">
+                  <div className="text text-center sm:text-left mt-5 sm:mt-0">
+                    <h3 className="news-title text-2xl font-semibold mr-0 sm:mr-20">{item.title}</h3>
+                    <p className="news-description text-gray-400 mt-3 mr-0 sm:mr-20">{item.processedDescription ? item.processedDescription.substring(0, 150) : 'No description available'}..</p>
                   </div>
                   {/* <div className="w-fit"> */}
-                  <Image src={image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-0 sm:mr-5 sm:w-60 w-35 h-35 object-cover" />
+                  <Image src={image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-5 w-full sm:w-60" />
                   {/* <div>{parts[1].toLocaleUpperCase()}</div> */}
                   {/* </div> */}
                 </a>
@@ -89,7 +89,7 @@ export default function LatestNews() {
             )
           })}    
           {visibleCount < items.length && (
-            <button onClick={handleLoadMore} className="text-center mt-10 text-2xl font-bold bg-(--secondary) px-10 py-2 cursor-pointer rounded-xl w-fit self-center hover:bg-(--primary) duration-300">Load More</button>
+            <button onClick={handleLoadMore} className="text-center mt-10 text-2xl font-bold bg-(--secondary) px-5 py-2 cursor-pointer rounded-xl">Load More</button>
           )}
         </div>
       </section>
