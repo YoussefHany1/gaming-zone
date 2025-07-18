@@ -5,24 +5,16 @@ import { useState, useEffect } from 'react';
 
 function processNewsItems(items) {
   return items.map((item) => {
-    const description2 = decode(item.description);
+    const description2 = decode(item.content) || decode(item.description);
     const parser = new DOMParser();
     const doc = parser.parseFromString(description2, 'text/html');
-    const imgEl = doc.querySelector('img');
-    const image = imgEl
-      ? {
-          src: imgEl.getAttribute('src') || '/image-not-found.png',
-          alt: imgEl.getAttribute('alt') || 'No Alt available',
-        }
-      : {
-          src: '/image-not-found.png',
-          alt: 'No Alt available',
-        };
-    doc.querySelectorAll('img').forEach((img) => img.remove());
-    const paragraphs = Array.from(doc.querySelectorAll('p')).map((p) =>
-      p.textContent.trim()
-    );
-    const description = paragraphs.join('\n\n');
+    const image = item.thumbnail || doc.querySelector('img')?.getAttribute('src') || '/image-not-found.png';
+        doc.querySelectorAll('img').forEach((img) => img.remove());
+        const paragraphs = Array.from(doc.querySelectorAll('p')).map((p) =>
+          p.textContent.trim()
+      );
+      // console.log(description);
+      const description = paragraphs.join('\n\n');
     const hostname = new URL(item.link).hostname;
     const parts = hostname.split('.');
     return {

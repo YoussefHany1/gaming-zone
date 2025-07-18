@@ -10,10 +10,10 @@ export default function Nav() {
           </Link>
         <div className="right ml-auto">
             <ul className="flex space-x-5 text-2xl font-medium">
-                <li><Link href="/news" className="text-white hover:text-gray-300">News</Link></li>
-                <li><Link href="/reviews" className="text-white hover:text-gray-300">Reviews</Link></li>
-                <li><Link href="/hardware" className="text-white hover:text-gray-300">Hardware</Link></li>
-                <li><Link href="/contact" className="text-white hover:text-gray-300">Contact Us</Link></li>
+                <li><Link href="/latest/news" className="text-white hover:text-gray-300">News</Link></li>
+                <li><Link href="/latest/reviews" className="text-white hover:text-gray-300">Reviews</Link></li>
+                <li><Link href="/latest/hardware" className="text-white hover:text-gray-300">Hardware</Link></li>
+                <li><Link href="/latest/contact" className="text-white hover:text-gray-300">Contact Us</Link></li>
             </ul>
         </div>
     </nav>

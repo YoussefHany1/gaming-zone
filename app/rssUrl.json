@@ -1,0 +1,116 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "name": "Game Informer",
+      "url": "https://www.gameinformer.com/rss.xml",
+      "image": "https://pbs.twimg.com/profile_images/1904604082377023488/AKr_ZNdi_400x400.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Destructoid",
+      "url": "https://www.destructoid.com/feed/",
+      "image": "https://yt3.googleusercontent.com/ytc/AIdro_kUVzsRJ8L0VYXFXS-d1XMbHc25NLfF-YTWGkQGEW4sG4bB=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 3,
+      "name": "VG247",
+      "url": "https://www.vg247.com/feed/news",
+      "image": "https://pbs.twimg.com/profile_images/1428030281081135108/lzZ5QRai_400x400.jpg"
+    },
+    {
+      "id": 4,
+      "name": "IGN",
+      "url": "https://feeds.feedburner.com/ign/news",
+      "image": "https://pbs.twimg.com/profile_images/1942272360851333120/5odpCMrs_400x400.jpg"
+    },
+    {
+      "id": 5,
+      "name": "GameSpot",
+      "url": "https://www.gamespot.com/feeds/game-news",
+      "image": "https://pbs.twimg.com/profile_images/1828825064914997248/2rurCf2y_400x400.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Eurogamer",
+      "url": "https://www.eurogamer.net/feed/news",
+      "image": "https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png"
+    },
+    {
+      "id": 7,
+      "name": "Game Rant",
+      "url": "https://gamerant.com/feed/gaming/",
+      "image": "https://pbs.twimg.com/profile_images/1288445622542929923/05FNH9O5_400x400.png"
+    },
+    {
+      "id": 8,
+      "name": "Saudi Gamer",
+      "url": "https://www.saudigamer.com/feed/",
+      "image": "https://pbs.twimg.com/profile_images/459163761220149249/wGTgLbCY_400x400.jpeg"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Game Informer",
+      "url": "https://www.gameinformer.com/reviews.xml",
+      "image": "https://pbs.twimg.com/profile_images/1904604082377023488/AKr_ZNdi_400x400.jpg"
+    },
+    {
+      "id": 2,
+      "name": "VG247",
+      "url": "https://www.vg247.com/feed/reviews",
+      "image": "https://pbs.twimg.com/profile_images/1428030281081135108/lzZ5QRai_400x400.jpg"
+    },
+    {
+      "id": 3,
+      "name": "GameSpot",
+      "url": "https://www.gamespot.com/feeds/reviews",
+      "image": "https://pbs.twimg.com/profile_images/1828825064914997248/2rurCf2y_400x400.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Eurogamer",
+      "url": "https://www.eurogamer.net/feed/reviews",
+      "image": "https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png"
+    },
+    {
+      "id": 5,
+      "name": "Game Rant",
+      "url": "https://gamerant.com/feed/gaming/",
+      "image": "https://pbs.twimg.com/profile_images/1288445622542929923/05FNH9O5_400x400.png"
+    }
+  ],
+  "hardware": [
+    {
+      "id": 1,
+      "name": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/feeds.xml",
+      "image": "https://pbs.twimg.com/profile_images/896131473236869120/tKFWGj5d_400x400.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Destructoid",
+      "url": "https://www.anandtech.com/rss/",
+      "image": "https://pbs.twimg.com/profile_images/700659315946835968/P-zYg7dA_400x400.png"
+    },
+    {
+      "id": 3,
+      "name": "TechPowerUp",
+      "url": "https://www.techpowerup.com/rss/news",
+      "image": "https://pbs.twimg.com/profile_images/580655886152110080/KXLeWm-p_400x400.png"
+    },
+    {
+      "id": 4,
+      "name": "Guru3D",
+      "url": "https://www.guru3d.com/rss.xml",
+      "image": "https://yt3.googleusercontent.com/ytc/AIdro_lU-6vI4pDwHpWFuoxdZQfhReXM5af-_eLQoXt42Qqobg=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 5,
+      "name": "VideoCardz",
+      "url": "https://videocardz.com/rss-feed",
+      "image": "https://pbs.twimg.com/profile_images/1492175151852658695/cyPkpNcz_400x400.jpg"
+    }
+  ]
+}

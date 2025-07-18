@@ -15,12 +15,14 @@ export async function GET(request) {
     const xml = await resp.text()
     const js = await parseStringPromise(xml, { mergeAttrs: true })
     const items = js.rss?.channel?.[0]?.item ?? []
-
+    // console.log(items[0].description);
     const jsonItems = items.map((item) => ({
       title: item.title?.[0] ?? '',
       link: item.link?.[0] ?? '',
       pubDate: item.pubDate?.[0] ?? '',
       description: item.description?.[0] ?? '',
+      thumbnail: item.thumbnail || item.image || item.enclosure?.[0]?.['url']?.[0] || item.enclosure?.[0].link || item['media:thumbnail']?.[0] || item['media:content']?.[0]?.['url']?.[0] || '',
+      content: item['content:encoded']?.[0] ?? '',
     }))
 
     return NextResponse.json(jsonItems)

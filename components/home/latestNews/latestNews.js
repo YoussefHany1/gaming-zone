@@ -22,7 +22,6 @@ export default function LatestNews() {
         <Link href='/news' className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest News</Link>
         <div className="container py-10 flex flex-col">
           {items.slice(0, visibleCount).map((item, index) => {
-            const image = item.image?.src || '/image-not-found.png'
             return (
               <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5 mx30`} key={index}>
                 <a href={item.link} target="_blank" className="news-link flex items-center justify-between sm:flex-row flex-col-reverse">
@@ -31,7 +30,7 @@ export default function LatestNews() {
                     <p className="news-description text-gray-400 mt-3 mr-0 sm:mr-20">{item.processedDescription ? item.processedDescription.substring(0, 150) : 'No description available'}..</p>
                   </div>
                   {/* <div className="w-fit"> */}
-                  <Image src={image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-5 w-full sm:w-60" />
+                  <Image src={item.image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-5 w-full sm:w-60" />
                   {/* <div>{parts[1].toLocaleUpperCase()}</div> */}
                   {/* </div> */}
                 </a>
