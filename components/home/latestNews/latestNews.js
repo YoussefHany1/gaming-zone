@@ -1,25 +1,18 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import {useState} from 'react';
 import { useFetchNews } from "@/hook/useFetchNews";
 
 export default function LatestNews() {
-  const [visibleCount, setVisibleCount] = useState(10);
-
-  // const handleLoadMore = () => {
-  //   setVisibleCount(prevCount => prevCount + 10);
-  // };
-  
+  const visibleCount = 10;
   const { items, error, loading } = useFetchNews(['https://www.gameinformer.com/rss.xml']);
-  // console.log(items);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <>
       <section className="flex flex-col justify-center items-center"> 
-        <Link href='/news' className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest News</Link>
+        <Link href='/latest/news' className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest News</Link>
         <div className="container py-10 flex flex-col">
           {items.slice(0, visibleCount).map((item, index) => {
             return (
@@ -38,7 +31,7 @@ export default function LatestNews() {
             )
           })}    
           {visibleCount < items.length && (
-            <Link href='/news' className="text-center mt-10 text-2xl font-bold bg-(--secondary) px-10 py-2 cursor-pointer rounded-xl w-fit self-center hover:bg-(--primary) duration-300">See More</Link>
+            <Link href='/latest/news' className="text-center mt-10 text-2xl font-bold bg-(--secondary) px-10 py-2 cursor-pointer rounded-xl w-fit self-center hover:bg-(--primary) duration-300">See More</Link>
           )}
         </div>
       </section>

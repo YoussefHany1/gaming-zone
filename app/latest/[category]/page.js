@@ -64,19 +64,19 @@ function LatestNews() {
       </Listbox>
     </div>
           
-        <div className="container py-10 flex flex-col">
+        <div className={`container py-10 flex flex-col`} dir={selected.language === 'ar' ? 'rtl' : 'ltr'}>
           {items.slice(0, visibleCount).map((item, index) => {
             return (
-              <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5`} key={index}>
-                <a href={item.link} target="_blank" className="news-link flex items-center justify-between">
-                  <div className="text mt-5 sm:mt-0">
-                    <h3 className="news-title text-lg sm:text-2xl font-semibold mr-0 sm:mr-20">{item.title}</h3>
-                    <p className="news-description text-gray-400 sm:text-md text-sm mr-0 sm:mt-3 sm:mr-20 mt-1">{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
+              <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5 flex items-center`} key={index}>
+                <a href={item.link} target="_blank" className={`news-link flex items-center justify-between w-full`}>
+                  <div className={`text mt-5 sm:mt-0`}>
+                    <h3 className={`news-title text-lg sm:text-2xl font-semibold ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.title}</h3>
+                    <p className={`news-description text-gray-400 sm:text-md text-sm sm:mt-3 mt-1 ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
                   </div>
-                  {/* <div className="w-fit"> */}
-                  <Image src={item.image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-0 sm:mr-5 sm:w-60 w-35 h-35 object-cover" />
-                  {/* <div>{parts[1].toLocaleUpperCase()}</div> */}
-                  {/* </div> */}
+                  <div className="">
+                    <Image src={item.image} width={300} height={300} alt={item.title} className="news-image rounded-md sm:max-w-none min-w-[160px]" objectFit="cover" />
+                    {/* <span>VG248</span> */}
+                  </div>
                 </a>
               </div>
             )

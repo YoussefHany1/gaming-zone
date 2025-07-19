@@ -1,10 +1,6 @@
 .splide__slide {
   max-width: 700px !important;
   max-height: 400px !important;
-  transition-duration: 0.3s;
-  &:hover {
-    width: 2 !important;
-  }
 }
 .splide__arrow {
   background: none;
