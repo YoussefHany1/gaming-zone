@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <Script src="https://cdn.lordicon.com/lordicon.js" strategy="beforeInteractive"></Script>
         </head>
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className='overflow-x-hidden'
       >
         <Navbar />
         {children}

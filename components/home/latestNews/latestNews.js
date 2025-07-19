@@ -6,7 +6,7 @@ import { useFetchNews } from "@/hook/useFetchNews";
 export default function LatestNews() {
   const visibleCount = 10;
   const { items, error, loading } = useFetchNews(['https://www.gameinformer.com/rss.xml']);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p></p>;
   if (error) return <p>Error: {error}</p>;
 
   return (

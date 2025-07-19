@@ -2,6 +2,7 @@ import Header from "@/components/home/header/header";
 import LatestNews from "@/components/home/latestNews/latestNews";
 import Reviews from "@/components/home/reviews/reviews";
 export default function Home() {
+  
   return (
     <>
       <Header />

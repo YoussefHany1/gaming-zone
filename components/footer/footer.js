@@ -4,11 +4,11 @@ import Link from "next/link";
 export default function Footer() {
   return (
       <footer className="bg-(--primary) flex items-center flex-col">
-          <div className="container flex justify-between items-center p-30">
+          <div className="container flex justify-between items-center py-30 px-0 lg:px-30">
               <div className="left flex items-center">
                   <Image src="/logo.png" alt="Logo" width={150} height={150} className="logo" />
                   <div className="text ml-5">
-                      <p className="font-bold text-2xl w-2xl pr-10">The perfect place for the latest news, articles,and reviews of video games</p>
+                      <p className="font-bold text-2xl w-fit lg:w-2xl pr-10 ">The perfect place for the latest news, articles,and reviews of video games</p>
                       <ul className="flex items-center mt-5 gap-2">
                           <li><a href="" className="instagram-icon" target="_blank"><lord-icon src="https://cdn.lordicon.com/tgyvxauj.json" trigger="morph" state="morph-circle" colors="primary:#fff,secondary:#fff" style={{width:"50px",height:"50px"}}></lord-icon></a></li>
                           <li><a href="#" className="facebook-icon" target="_blank"><lord-icon src="https://cdn.lordicon.com/gnqwqcgx.json" trigger="morph" state="morph-circle" colors="primary:#fff,secondary:#0c1a33,tertiary:#0c1a33" style={{width:"50px", height:"50px"}}></lord-icon></a></li>
@@ -18,7 +18,7 @@ export default function Footer() {
                       
                   </div>
               </div>
-              <div className="right">
+              <div className="right hidden lg:block">
                   <ul>
                       <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">About Us</Link></li>
                       <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/news" className="text-2xl font-bold">FAQ</Link></li>

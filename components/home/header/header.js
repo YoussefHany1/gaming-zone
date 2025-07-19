@@ -9,7 +9,7 @@ import './header.css';
 export default function Header() {
   
   const { items, error, loading } = useFetchNews(['https://www.destructoid.com/feed/']);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p></p>;
   if (error) return <p>Error: {error}</p>;
   console.log(items);
   return (
