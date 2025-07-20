@@ -27,7 +27,7 @@ function LatestNews() {
   return (
     <>
       <section className="flex flex-col justify-center items-center mt-20"> 
-        <h2 className="p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest {category}</h2>
+        <h2 className="text-white p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest {category}</h2>
 
 <div className="mx-auto w-52 pt-10 pb-20">
       <Listbox value={selected} onChange={setSelected}>
@@ -58,7 +58,7 @@ function LatestNews() {
               className="group flex cursor-default items-center gap-2 rounded-lg px-3 py-1.5 select-none data-focus:bg-white/10"
             >
               <CheckIcon className="invisible size-4 fill-white group-data-selected:visible" />
-              <div className="text-sm/6 text-white flex"><Image width={20} height={20} src={site.image} alt={`${site.name}`} className="rounded-full mr-3 h-fit" />{site.name}</div>
+              <div className="text-sm/6 text-white flex"><Image width={20} height={20} src={site.image} alt={site.name} className="rounded-full mr-3 h-fit" />{site.name}</div>
             </ListboxOption>
           ))}
         </ListboxOptions>
@@ -71,7 +71,7 @@ function LatestNews() {
               <div className={`news-item ${index} py-5 border-b-1 border-gray-600 hover:bg-(--secondary) duration-300 rounded-xl px-5 flex items-center`} key={index}>
                 <a href={item.link} target="_blank" className={`news-link flex items-center justify-between w-full`}>
                   <div className={`text mt-5 sm:mt-0`}>
-                    <h3 className={`news-title text-lg sm:text-2xl font-semibold ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.title}</h3>
+                    <h3 className={`news-title text-white text-lg sm:text-2xl font-semibold ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.title}</h3>
                     <p className={`news-description text-gray-400 sm:text-md text-sm sm:mt-3 mt-1 ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
                   </div>
                   <div className="">

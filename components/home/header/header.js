@@ -13,7 +13,7 @@ export default function Header({ items }) {
           return (
             <SplideSlide key={index} className={`${index}`}>
               <Link href="/" className="rounded-md">
-                <Image src={item.image} width={700} height={400} className="rounded-md w-full h-auto" alt={`${item.title}`} />
+                <Image src={item.image} width={700} height={400} className="rounded-md w-full h-auto text-white" alt={`${item.title}`} />
                 <h2 className='absolute text-center p-5 pb-7 bottom-0 rounded-md bg-linear-to-t from-black to-transparent h-full w-full flex items-end justify-center font-bold text-xl'>{item.title}</h2>
               </Link>
             </SplideSlide>
