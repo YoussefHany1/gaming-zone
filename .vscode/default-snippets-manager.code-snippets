@@ -1,0 +1,17 @@
+{
+	"export": {
+		"prefix": "export",
+		"description": "export",
+		"scope": "javascript",
+		"body": [
+			"function Name() {\r",
+			"  \r",
+			"  return (\r",
+			"    <>\r",
+			"    </>\r",
+			"  );\r",
+			"}\r",
+			"export default Name;"
+		]
+	}
+}

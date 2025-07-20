@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { useFetchNews } from "@/hook/useFetchNews";
 import { useParams } from 'next/navigation';
 import rssUrl from "@/app/rssUrl.json"; // Assuming you have a file that exports the websites array
+import LoadingPage from "@/app/loading";
 
 function LatestNews() {
   const params = useParams();
@@ -20,7 +21,7 @@ function LatestNews() {
   const [selected, setSelected] = useState(websites[0])
   
   const { items, error, loading } = useFetchNews([selected.url]);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingPage />;
   if (error) return <p>Error: {error}</p>;
   console.log(items);
   return (

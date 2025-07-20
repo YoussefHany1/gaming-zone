@@ -2,19 +2,13 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import Link from 'next/link';
 import Image from "next/image";
-import { useFetchNews } from "@/hook/useFetchNews";
 import '@splidejs/splide/css';
 import './header.css';
 
-export default function Header() {
-  
-  const { items, error, loading } = useFetchNews(['https://www.destructoid.com/feed/']);
-  if (loading) return <p></p>;
-  if (error) return <p>Error: {error}</p>;
-  console.log(items);
+export default function Header({ items }) {
   return (
     <header className="pt-10">
-      <Splide options={{ rewind: true, type: 'slide', gap: 50, pagination: false,  breakpoints: {1024: { perPage: 2,},768: {perPage: 1,}},}}>
+      <Splide options={{ rewind: true, type: 'slide', gap: 50, pagination: false, breakpoints: { 1024: { perPage: 2, }, 768: { perPage: 1, } }, }}>
         {items.slice(0, 10).map((item, index) => {
           return (
             <SplideSlide key={index} className={`${index}`}>

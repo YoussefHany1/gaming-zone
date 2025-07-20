@@ -6,7 +6,7 @@ export default function Footer() {
       <footer className="bg-(--primary) flex items-center flex-col">
           <div className="container flex justify-between items-center py-30 px-0 lg:px-30">
               <div className="left flex items-center">
-                  <Image src="/logo.png" alt="Logo" width={150} height={150} className="logo" />
+                  <Image src="/logo.png" className="gz-logo" width={150} height={150} alt="Gaming Zone Logo"/>
                   <div className="text ml-5">
                       <p className="font-bold text-2xl w-fit lg:w-2xl pr-10 ">The perfect place for the latest news, articles,and reviews of video games</p>
                       <ul className="flex items-center mt-5 gap-2">
@@ -21,14 +21,14 @@ export default function Footer() {
               <div className="right hidden lg:block">
                   <ul>
                       <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">About Us</Link></li>
-                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/news" className="text-2xl font-bold">FAQ</Link></li>
-                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/articles" className="text-2xl font-bold">Contact Us</Link></li>
-                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/reviews" className="text-2xl font-bold">Privacy Statement</Link></li>
-                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/about" className="text-2xl font-bold">Terms of Use</Link></li>
+                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">FAQ</Link></li>
+                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">Contact Us</Link></li>
+                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">Privacy Statement</Link></li>
+                      <li className="mb-3 hover:text-(--secondary) duration-200"><Link href="/" className="text-2xl font-bold">Terms of Use</Link></li>
                   </ul>
               </div>
           </div>
-          <p className="text-center text-(--secondary) pb-5">© 2025 All rights reserved. Reliance Retail Ltd.</p>
+          <p className="text-center text-(--secondary) pb-5">&copy; 2025 All rights reserved. Reliance Retail Ltd.</p>
     </footer>
   );
 }

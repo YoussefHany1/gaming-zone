@@ -1,14 +1,8 @@
-'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useFetchNews } from "@/hook/useFetchNews";
 
-export default function Reviews() {
+export default function Reviews({ items }) {
     const visibleCount = 10;
-  const { items, error, loading } = useFetchNews(['https://www.vg247.com/feed/reviews']);
-  // console.log(items);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
   
   return (
     <>

@@ -1,9 +1,7 @@
 @import "tailwindcss";
-
 * {
   font-family: "arial";
 }
-
 :root {
   --primary: #0c1a33;
   --secondary: #516996;

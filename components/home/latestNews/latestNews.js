@@ -1,14 +1,8 @@
-'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useFetchNews } from "@/hook/useFetchNews";
 
-export default function LatestNews() {
+export default function LatestNews({ items }) {
   const visibleCount = 10;
-  const { items, error, loading } = useFetchNews(['https://www.gameinformer.com/rss.xml']);
-  if (loading) return <p></p>;
-  if (error) return <p>Error: {error}</p>;
-
   return (
     <>
       <section className="flex flex-col justify-center items-center"> 
@@ -23,7 +17,7 @@ export default function LatestNews() {
                     <p className="news-description text-gray-400 mt-3 mr-0 sm:mr-20">{item.processedDescription ? item.processedDescription.substring(0, 150) : 'No description available'}..</p>
                   </div>
                   {/* <div className="w-fit"> */}
-                  <Image src={item.image} width={400} height={400} alt={item.title} className="news-image rounded-md mr-5 w-full sm:w-60" />
+                  <Image src={item.image} width={400} height={400} alt={item.title} className="news-image rounded-md w-full sm:w-60" />
                   {/* <div>{parts[1].toLocaleUpperCase()}</div> */}
                   {/* </div> */}
                 </a>
