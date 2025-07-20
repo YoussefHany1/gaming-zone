@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import logo from "@/public/logo.png";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Nav() {
   return (
     <nav className={`w-full flex items-center justify-between py-3 bg-dark-100 bg-(--primary) pl-[5%] pr-[5%]`}>
       <Link href="/" className="left flex items-center">
-        <Image src="/logo.png" alt="Logo" width={70} height={70} className="rounded-full" />
+        <Image src={logo} alt="Logo" width={70} height={70} className="rounded-full" />
         <h1 className="text-3xl font-bold ml-4 text-white">Gaming Zone</h1>
       </Link>
       <div className="right ml-auto">

@@ -76,7 +76,7 @@ function LatestNews() {
                   </div>
                   <div className="">
                     <Image src={item.image} width={300} height={300} alt={item.title} className="news-image rounded-md sm:max-w-none min-w-[160px]" objectFit="cover" />
-                    {/* <span>VG248</span> */}
+                    <span className="relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName }</span>
                   </div>
                 </a>
               </div>

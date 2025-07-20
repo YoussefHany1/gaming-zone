@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import logo from "@/public/logo.png";
 
 export default function Footer() {
   return (
       <footer className="bg-(--primary) flex items-center flex-col">
           <div className="container flex justify-between items-center py-30 px-0 lg:px-30">
               <div className="left flex items-center">
-                  <Image src="/logo.png" className="gz-logo" width={150} height={150} alt="Gaming Zone Logo"/>
+                  <Image src={logo} className="gz-logo" width={150} height={150} alt="Gaming Zone Logo"/>
                   <div className="text ml-5">
                       <p className="font-bold text-white text-2xl w-fit lg:w-2xl pr-10">The perfect place for the latest news, articles,and reviews of video games</p>
                       <ul className="flex items-center mt-5 gap-2">
