@@ -76,7 +76,7 @@ function LatestNews() {
                   </div>
                   <div className="h-[169px]">
                     <Image src={item.image} width={300} height={300} alt={item.title} className="news-image rounded-md sm:max-w-none min-w-[160px]" objectFit="cover" />
-                    <span className="relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName.charAt(0).toUpperCase() + item.websiteName.slice(1).toLowerCase() }</span>
+                    <span className="text-white relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName.charAt(0).toUpperCase() + item.websiteName.slice(1).toLowerCase() }</span>
                   </div>
                 </a>
               </div>
