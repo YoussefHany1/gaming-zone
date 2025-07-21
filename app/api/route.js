@@ -1,4 +1,3 @@
-// app/api/rss-to-json/route.ts
 import { NextResponse } from 'next/server'
 import { parseStringPromise } from 'xml2js'
 

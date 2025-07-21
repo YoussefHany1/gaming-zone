@@ -7,9 +7,9 @@ export default function Footer() {
       <footer className="bg-(--primary) flex items-center flex-col">
           <div className="container flex justify-between items-center py-30 px-0 lg:px-30">
               <div className="left flex items-center">
-                  <Image src={logo} className="gz-logo" width={150} height={150} alt="Gaming Zone Logo"/>
+                  <Image src={logo} className='logo' width={150} height={150} alt="Gaming Zone Logo"/>
                   <div className="text ml-5">
-                      <p className="font-bold text-white text-2xl w-fit lg:w-2xl pr-10">The perfect place for the latest news, articles,and reviews of video games</p>
+                      <p className="font-bold text-white text-2xl w-fit lg:w-2xl pr-0 lg:pr-10">The perfect place for the latest news, articles,and reviews of video games</p>
                       <ul className="flex items-center mt-5 gap-2">
                           <li><a href="" className="instagram-icon" target="_blank"><lord-icon src="https://cdn.lordicon.com/tgyvxauj.json" trigger="morph" state="morph-circle" colors="primary:#fff,secondary:#fff" style={{width:"50px",height:"50px"}}></lord-icon></a></li>
                           <li><a href="#" className="facebook-icon" target="_blank"><lord-icon src="https://cdn.lordicon.com/gnqwqcgx.json" trigger="morph" state="morph-circle" colors="primary:#fff,secondary:#0c1a33,tertiary:#0c1a33" style={{width:"50px", height:"50px"}}></lord-icon></a></li>

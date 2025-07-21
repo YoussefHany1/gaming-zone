@@ -59,3 +59,16 @@ body {
     background-position: 0% 50%;
   }
 }
+@media (max-width: 512px) {
+  body {
+    background: #0c1a33fa !important;
+  }
+  footer lord-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  footer .logo {
+    width: 135px !important;
+    height: 135px !important;
+  }
+}

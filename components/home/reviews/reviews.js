@@ -14,8 +14,8 @@ export default function Reviews({ items }) {
               <div className={`reviews-item container flex pt-5 ${index}`} key={index}>
                 <Image src={item.image} width={200} height={100} className={`reviews-image rounded-tl-2xl rounded-br-2xl flex-none basis-[110px] hover:basis-[150px] object-cover h-23 duration-300`} alt={ item.title } />
                 <Link href="/latest/reviews" target="_blank" className="reviews-link pl-10">
-                  <h2 className="reviews-title text-md font-semibold">{item.title ? item.title.substring(0, 70) : 'not available'}..</h2>
-                  <p className="source text-sm text-gray-500">VG247</p>
+                  <h2 className="reviews-title text-md font-semibold">{item.title ? item.title.substring(0, 70) : 'Not Available'}..</h2>
+                  <p className="source text-sm text-gray-500">{ item.websiteName }</p>
                 </Link>
               </div>
             )

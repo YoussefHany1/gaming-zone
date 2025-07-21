@@ -74,9 +74,9 @@ function LatestNews() {
                     <h3 className={`news-title text-white text-lg sm:text-2xl font-semibold ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.title}</h3>
                     <p className={`news-description text-gray-400 sm:text-md text-sm sm:mt-3 mt-1 ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
                   </div>
-                  <div className="">
+                  <div className="h-[169px]">
                     <Image src={item.image} width={300} height={300} alt={item.title} className="news-image rounded-md sm:max-w-none min-w-[160px]" objectFit="cover" />
-                    <span className="relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName }</span>
+                    <span className="relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName.charAt(0).toUpperCase() + item.websiteName.slice(1).toLowerCase() }</span>
                   </div>
                 </a>
               </div>

@@ -37,7 +37,7 @@
     },
     {
       "id": 6,
-      "name": "Eurogamer",
+      "name": "Euro gamer",
       "url": "https://www.eurogamer.net/feed/news",
       "image": "https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png",
       "language": "en"
@@ -61,6 +61,20 @@
       "name": "Games Mix",
       "url": "https://gamesmix.net/category/news/feed/",
       "image": "https://pbs.twimg.com/profile_images/1855205000948977664/C5aTLbop_400x400.jpg",
+      "language": "ar"
+    },
+    {
+      "id": 10,
+      "name": "Arab Hardware",
+      "url": "http://feeds.feedburner.com/arabhardware",
+      "image": "https://arabhardware.net/theme-assets/images/logo.svg",
+      "language": "ar"
+    },
+    {
+      "id": 11,
+      "name": "True Gaming",
+      "url": "https://www.true-gaming.net/home/category/gaming-news/feed/ ",
+      "image": "https://pbs.twimg.com/profile_images/1864386621908418560/zrBe-GcB_400x400.jpg",
       "language": "ar"
     }
   ],
@@ -88,7 +102,7 @@
     },
     {
       "id": 4,
-      "name": "Eurogamer",
+      "name": "Euro gamer",
       "url": "https://www.eurogamer.net/feed/reviews",
       "image": "https://pbs.twimg.com/profile_images/1835625788462280704/zf4FsLft_400x400.png",
       "language": "en"
@@ -105,6 +119,13 @@
       "name": "Games Mix",
       "url": "https://gamesmix.net/category/reviews/feed/",
       "image": "https://pbs.twimg.com/profile_images/1855205000948977664/C5aTLbop_400x400.jpg",
+      "language": "ar"
+    },
+        {
+      "id": 11,
+      "name": "True Gaming",
+      "url": "https://www.true-gaming.net/home/category/games-list/feed/ ",
+      "image": "https://pbs.twimg.com/profile_images/1864386621908418560/zrBe-GcB_400x400.jpg",
       "language": "ar"
     }
   ],
