@@ -1,5 +1,4 @@
 // Custom React hook to fetch and process news from RSS feeds
-'use client'
 import { decode } from 'html-entities';
 import { useState, useEffect } from 'react';
 
@@ -27,12 +26,6 @@ function processNewsItems(items) {
   });
 }
 
-/**
- * useFetchNews
- * @param {string|string[]} rssUrls عنوان أو مجموعة عناوين RSS
- * @param {number} [intervalMs] فترة التحديث بالألف ميللي ثانية (اختياري)
- * @returns {object} { items, error, loading } - Processed news items, error state, and loading state
- */
 export function useFetchNews(rssUrls, intervalMs) {
   const [items, setItems] = useState([]);
   const [processedItems, setProcessedItems] = useState([]);

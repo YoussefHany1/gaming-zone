@@ -8,13 +8,13 @@ import { useFetchNews } from "@/hook/useFetchNews";
 import { useParams } from 'next/navigation';
 import rssUrl from "@/app/rssUrl.json"; // Assuming you have a file that exports the websites array
 import LoadingPage from "@/app/loading";
+import Error from "@/app/not-found.js";
 
 function LatestNews() {
   const params = useParams();
   const category = params.category;
   const websites = rssUrl[category] || []; // Access the websites based on the category from the URL params
   const [visibleCount, setVisibleCount] = useState(10);
-  
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + 10);
   };
@@ -22,12 +22,11 @@ function LatestNews() {
   
   const { items, error, loading } = useFetchNews([selected.url]);
   if (loading) return <LoadingPage />;
-  if (error) return <p>Error: {error}</p>;
-  console.log(items);
+  if (error) return <Error />;
   return (
     <>
       <section className="flex flex-col justify-center items-center mt-20"> 
-        <h2 className="text-white p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest {category}</h2>
+        <h2 className="text-white p-5 px-10 bg-(--secondary) w-fit text-center rounded-2xl text-3xl font-bold">Latest {category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()}</h2>
 
 <div className="mx-auto w-52 pt-10 pb-20">
       <Listbox value={selected} onChange={setSelected}>
@@ -75,7 +74,7 @@ function LatestNews() {
                     <p className={`news-description text-gray-400 sm:text-md text-sm sm:mt-3 mt-1 ${selected.language == 'ar' ? 'mr-0' : 'mr-0 sm:mr-20'}`}>{item.processedDescription ? item.processedDescription.substring(0, 100) : 'No description available'}..</p>
                   </div>
                   <div className="h-[169px]">
-                    <Image src={item.image} width={300} height={300} alt={item.title} className="news-image rounded-md sm:max-w-none min-w-[160px]" objectFit="cover" />
+                    <Image src={item.image} width={300} height={300} alt={item.title} className="news-image object-cover rounded-md sm:max-w-none min-w-[160px]" />
                     <span className="text-white relative -top-7 bg-black/50 p-2 rounded-[16px]">{ item.websiteName.charAt(0).toUpperCase() + item.websiteName.slice(1).toLowerCase() }</span>
                   </div>
                 </a>
