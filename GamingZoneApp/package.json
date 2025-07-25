@@ -4,9 +4,13 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
+    "start:clear": "expo start --clear",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
+    "publish": "expo publish"
   },
   "dependencies": {
     "expo": "~53.0.20",
